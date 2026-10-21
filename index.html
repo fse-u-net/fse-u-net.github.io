@@ -86,7 +86,7 @@
               <span class="author-block">
                 <a href="https://omaralv.com">Omar A. Mures</a><sup>1,2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="author-block">
-                <a href="">Juan Garc&iacute;a-Tiz&oacute;n</a><sup>1</sup>
+                <a href="">Juan Garc&iacute;a-Tiz&oacute;n</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="author-block">
                 <a href="https://mcidmontoya.com/">Miguel Cid Montoya</a><sup>3</sup>  
             </div>
@@ -163,7 +163,13 @@
         <img src="./static/images/FSE-U-Net.jpg" class="teaser-image"
           style="width: 110%; max-width: 110%; display: block; margin: 0 -5%;" />
         <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
-          System overview of the proposed flow prediction framework.
+          System overview of the proposed flow prediction framework. The pipeline integrates 
+          three contributions: (1) SDF-biased flow importance sampling (BiFIS), which 
+          transforms unstructured CFD mesh data into "relaxed" image tensors using distance-weighted 
+          probability distributions; (2) dual-band filtering, which decomposes 
+          the flow signal into low frequency (LF) and high frequency (HF) components 
+          using a Butterworth filter to facilitate neural network learning; and 
+          (3) the FSE-U-Net architecture, a physics-conditioned architecture that reconstructs the flow fields.
         </h2>
       </div>
     </div>
@@ -175,12 +181,10 @@
         <img src="./static/images/architecture.jpg" class="teaser-image"
           style="width: 120%; max-width: 100%; display: block; margin: 0 0%;" />
         <h2 class="subtitle has-text-centered">
-          FSE-U-Net architecture. The pipeline integrates three core methodological contributions: 
-          (1) SDF-biased flow importance sampling (BiFIS), which transforms unstructured CFD mesh 
-          data into “relaxed” image tensors using distance-weighted probability distributions; 
-          (2) dual-band filtering, which decomposes the flow signal into low frequency (LF) and high 
-          frequency (HF) components using a Butterworth filter to facilitate neural network learning; 
-          and (3) the FSE-U-Net architecture, a physics-conditioned architecture that reconstructs the flow fields.
+          FSE-U-Net architecture. The model fuses spatial and physical data through two parallel encoding branches: 
+          (1) the spatial encoder and (2) the physics context encoder. This embedding generates scale and shift parameters for feature-wise linear modulation (FiLM). 
+          The decoder reconstructs the flow fields using pixel shuffle upsampling, conditioned by the physics parameters via FiLM at multiple resolutions. 
+          Skip connections are employed to preserve pixel-wise details.
         </h2>
       </div>
     </div>
@@ -194,28 +198,26 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Precisely emulating aeroelastic phenomena and fluid-structure interaction (FSI)
-               parameters as a function of bluff body shape, largely governed by complex aerodynamics, 
-               presents a significant challenge. Moreover, the emulation of bluff body aerodynamics for 
-               design optimization is not limited to geometric variables; its dependence on key aeroelastic 
-               operational parameters, such as reduced velocity and mean angle of attack, is critical 
-               for evaluating the structure's wind-induced responses. The absence of closed-form analytical 
-               expressions makes the use of surrogate modeling and machine learning (ML) techniques essential 
-               for this task. However, a common limitation of traditional emulation methods is the a priori 
-               choice of a trend function. This selection, often guided by engineering experience, fundamentally 
-               constrains the model's flexibility and its ability to reproduce target aeroelastic parameters or 
-               responses accurately. Symbolic Regression (SR) offers a viable alternative as a trend model-free 
-               methodology that learns from the data and determines the optimal functional form of the model, 
-               along with its associated parameters. It circumvents the need for predefined basis functions that 
-               can negatively impact predictive performance. This study proposes a two-stage SR methodology for 
-               search and refinement of discovered expressions and examines its efficacy of SR for emulating FSI 
-               parameters, specifically focusing on predicting the flutter derivatives of a bluff bridge deck as a 
-               multivariate function of its geometric shape, reduced velocity, and angle of attack. Results show 
-               that our Symbolic Regression methodology outperforms conventional Kriging surrogates when predicting 
-               responses for unseen data samples, while simultaneously offering superior smoothness, compactness, 
-               and interpretability, thus avoiding the ``black-box'' approach that most surrogate models provide. 
-               These findings highlight the proposed SR strategy as a robust and promising approach for the design exploration 
-               of bluff body aerodynamics.
+              Wind-resistant shape design exploration of civil engineering structures 
+              fundamentally relies on the accurate interpolation and extrapolation of bluff-body 
+              aerodynamic features. Current methodologies typically emulate global, integrated 
+              coefficients, such as flutter derivatives and admittance functions, in the 
+              frequency domain, adopting black-box models. However, they often fail to capture 
+              sudden aerodynamic transitions due to data sparsity and lack the phenomenological 
+              information inherent to the fluid–structure interaction (FSI). Wind engineering FSI 
+              problems typically deal with complex turbulent fluid fields characterized by 
+              multiple flow features and frequencies, time-varying flow domains with moving 
+              bodies, and, when designing, bluff body shape variations leading to different 
+              flow domains. This study proposes a novel deep learning strategy combining: 
+              (1) a dual-band flow superposition approach separating the prediction of 
+              flow fields for different frequency bands, (2) the BiFIS sampling strategy 
+              for shape-agnostic and accurate prediction of flow fields, and (3) a novel 
+              physics-informed FSE-U-Net architecture that conditions flow reconstruction on 
+              global physical parameters through feature-wise linear modulation (FiLM), 
+              ensuring physical consistency across variable flow regimes. The methodology 
+              is validated through the flow-driven prediction of frequency-dependent flutter 
+              derivatives using CFD-generated forced vibration flow fields of a bluff bridge 
+              deck subject to shape modifications.
             </p>
           </div>
         </div>
