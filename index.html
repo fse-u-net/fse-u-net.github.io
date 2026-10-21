@@ -160,6 +160,19 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline style="width: 95%; display: block; margin: 0 auto;">
+          <source src="./static/videos/urans.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
+          Original URANS dataset.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
         <img src="./static/images/FSE-U-Net.jpg" class="teaser-image"
           style="width: 110%; max-width: 110%; display: block; margin: 0 -5%;" />
         <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
@@ -180,7 +193,7 @@
       <div class="hero-body">
         <img src="./static/images/architecture.jpg" class="teaser-image"
           style="width: 120%; max-width: 100%; display: block; margin: 0 0%;" />
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
           FSE-U-Net architecture. The model fuses spatial and physical data through two parallel encoding branches: 
           (1) the spatial encoder and (2) the physics context encoder. This embedding generates scale and shift parameters for feature-wise linear modulation (FiLM). 
           The decoder reconstructs the flow fields using pixel shuffle upsampling, conditioned by the physics parameters via FiLM at multiple resolutions. 
@@ -193,22 +206,9 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <video id="teaser" autoplay muted loop playsinline style="width: 95%; display: block; margin: 0 auto;">
-          <source src="./static/videos/urans.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
-          Original URANS dataset.
-        </h2>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
         <img src="./static/images/fds.jpg" class="teaser-image"
           style="width: 120%; max-width: 100%; display: block; margin: 0 0%;" />
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
           Prediction results for flutter derivative response surfaces using our framework.
         </h2>
       </div>
@@ -270,7 +270,7 @@
     <div class="container is-max-desktop">
 
           <div class="hero-body">
-            <img src="./static/images/forces.png" class="teaser-image"
+            <img src="./static/images/forces.jpg" class="teaser-image"
               style="width: 130%; max-width: 130%; display: block; margin: 0 -15%;" />
             <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
               Self-excited force prediction results using our flow-driven method.
@@ -281,7 +281,7 @@
     <div class="container is-max-desktop">
 
           <div class="hero-body">
-            <img src="./static/images/flutter.png" class="teaser-image"
+            <img src="./static/images/flutter.jpg" class="teaser-image"
               style="width: 130%; max-width: 130%; display: block; margin: 0 -15%;" />
             <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
               Flutter derivative prediction results using our flow-driven method.
