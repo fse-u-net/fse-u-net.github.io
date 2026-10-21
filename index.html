@@ -190,6 +190,31 @@
     </div>
   </section>
 
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline style="width: 95%; display: block; margin: 0 auto;">
+          <source src="./static/videos/urans.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
+          Original URANS dataset.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/fds.jpg" class="teaser-image"
+          style="width: 120%; max-width: 100%; display: block; margin: 0 0%;" />
+        <h2 class="subtitle has-text-centered">
+          Prediction results for flutter derivative response surfaces using our framework.
+        </h2>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
@@ -234,13 +259,36 @@
     <div class="container is-max-desktop">
 
           <div class="hero-body">
-            <img src="./static/images/surfaces.jpg" class="teaser-image"
+            <img src="./static/images/flow.jpg" class="teaser-image"
               style="width: 130%; max-width: 130%; display: block; margin: 0 -15%;" />
             <h2 class="subtitle has-text-centered">
-              Results produced by a Kriging Surrogate and our SR framework for each value of mean angle of attack of the corresponding deck.
+              Flow prediction results using our FSE-U-Net architecture.
             </h2>
           </div>
           </div>
+
+    <div class="container is-max-desktop">
+
+          <div class="hero-body">
+            <img src="./static/images/forces.png" class="teaser-image"
+              style="width: 130%; max-width: 130%; display: block; margin: 0 -15%;" />
+            <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
+              Self-excited force prediction results using our flow-driven method.
+            </h2>
+          </div>
+          </div>
+    
+    <div class="container is-max-desktop">
+
+          <div class="hero-body">
+            <img src="./static/images/flutter.png" class="teaser-image"
+              style="width: 130%; max-width: 130%; display: block; margin: 0 -15%;" />
+            <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
+              Flutter derivative prediction results using our flow-driven method.
+            </h2>
+          </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -248,15 +296,15 @@
       <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
           <h2 class="title">BibTeX</h2>
-          <pre><code>@Article{montoya2026symoblic,
-  author = {Cid Montoya, Miguel and Mures, Omar A. and Garc{\'i}a-Tiz{\'o}n, Juan},
-  title = {Symbolic Regression enabled prediction of flutter derivatives},
-  journal = {Advances in Wind Engineering},
-  volume = {3},
-  number = {2},
-  pages = {100107},
-  doi = {https://doi.org/10.1016/j.awe.2026.100107},
-  url = {https://www.sciencedirect.com/science/article/pii/S2950601826000096},
+          <pre><code>@Article{mures2026flow,
+  author = {Mures, Omar A. and Garc{\'i}a-Tiz{\'o}n, Juan and Cid Montoya, Miguel},
+  title = {Flow-driven prediction of bluff body fluid–structure interaction},
+  journal = {Journal of Wind Engineering and Industrial Aerodynamics},
+  volume = {279},
+  pages = {106613},
+  year = {2026}
+  doi = {10.1016/j.jweia.2026.106613},
+  url = {https://doi.org/10.1016/j.jweia.2026.106613},
 }</code></pre>
         </div>
       </section>
@@ -265,14 +313,14 @@
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
-          <a class="icon-link" href="https://sr-flutter.github.io/">
+          <a class="icon-link" href="https://fse-u-net.github.io/">
             <i class="fas fa-home"></i>
           </a>
           <a class="icon-link"
-            href="https://www.sciencedirect.com/science/article/pii/S2950601826000096/pdfft?md5=abb110edf33dfa384ed96dd66642c1cc&pid=1-s2.0-S2950601826000096-main.pdf">
+            href="https://www.sciencedirect.com/science/article/pii/S0167610526002825/pdfft?md5=20b8c1ce2709a8d501824f81241ac4dd&pid=1-s2.0-S0167610526002825-main.pdf">
             <i class="fas fa-file-pdf"></i>
           </a>
-          <a class="icon-link" href="https://github.com/omaralvarez/SRFD" class="external-link" disabled>
+          <a class="icon-link" href="https://github.com/omaralvarez/FSE-U-Net" class="external-link" disabled>
             <i class="fab fa-github"></i>
           </a>
         </div>
